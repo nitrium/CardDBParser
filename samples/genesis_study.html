@@ -1,0 +1,1922 @@
+
+<!DOCTYPE html>
+	<html lang="en"  xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<meta charset="UTF-8" />
+		<title>A Study in Static - Android: Netrunner LCG - Android: Netrunner Card Spoilers - Card Game DB</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="shortcut icon" href='forums/favicon.ico' />
+		<link rel="image_src" href='forums/public/style_images/gravity_blue/cgdb-ogimage.jpg' />
+		<script type='text/javascript'>
+		//<![CDATA[
+			jsDebug			= 0; /* Must come before JS includes */
+			USE_RTE			= 1;
+			DISABLE_AJAX	= parseInt(0); /* Disables ajax requests where text is sent to the DB; helpful for charset issues */
+			inACP			= false;
+			var isRTL		= false;
+			var rtlIe		= '';
+			var rtlFull		= '';
+		//]]>
+		</script>
+		
+	
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="print" href="forums/public/style_css/css_12/ipcontent_print.css?ipbv=043ecf8e664f88aaf8fc8eaceaed45cc" />
+		
+	
+
+				
+	
+	
+		<link rel="stylesheet" type="text/css" media='screen,print' href="forums/public/min/index.php?ipbv=043ecf8e664f88aaf8fc8eaceaed45cc&amp;f=public/style_css/css_12/calendar_select.css,public/style_css/css_12/ipb_common.css,public/style_css/css_12/ipb_styles.css,public/style_css/css_12/ipcontent.css,public/style_css/css_12/ipshoutbox.css" />
+	
+
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="forums/public/style_css/css_12/ipb_ie.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+	<style type='text/css'>
+		.ipb_table { table-layout: fixed; }
+		.ipsLayout_content { width: 99.5%; }
+	</style>
+<![endif]-->
+
+	<style type='text/css'>
+		img.bbc_img { max-width: 100% !important; }
+	</style>
+
+		<meta property="og:title" content="A Study in Static - Android: Netrunner LCG - Android: Netrunner Card Spoilers"/>
+		<meta property="og:site_name" content="Card Game DB"/>
+		<meta property="og:image" content="forums/public/style_images/gravity_blue/cgdb-ogimage.jpg"/>
+		<meta property="og:type" content="article" />
+		
+	
+		
+			<meta name="identifier-url" content="index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/" />
+		
+		
+			<meta property="og:url" content="index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/" />
+		
+		
+	
+
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+		<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type='text/javascript'>!window.jQuery && document.write('<script src="forums/public/style_images/gravity_blue/js/jquery.min.js"><\/script>')</script>
+		<script type='text/javascript' src="forums/public/style_images/gravity_blue/js/cookie.js"></script>
+		<script type='text/javascript' src="forums/public/style_images/gravity_blue/js/ipbforumskins.js"></script>
+		
+		<script type='text/javascript' src='forums/public/min/index.php?ipbv=043ecf8e664f88aaf8fc8eaceaed45cc&amp;g=js'></script>
+	
+	<script type='text/javascript' src='forums/public/min/index.php?ipbv=043ecf8e664f88aaf8fc8eaceaed45cc&amp;charset=UTF-8&amp;f=public/js/ipb.js,cache/lang_cache/1/ipb.lang.js,public/js/ips.hovercard.js,public/js/ips.quickpm.js,public/js/ips.like.js' charset='UTF-8'></script>
+
+
+
+<script type="text/javascript" language="javascript">
+
+var popupDraggable;
+var Timer;
+
+document.observe("dom:loaded", function() {
+	$('GoTQSearch').observe('click', showSearchbox);
+	if($('GoTMenuImage')){new ipb.Menu($('GoTMenuImage'),$('GOTlinksbox'));}
+	if($('CoCMenuImage')){new ipb.Menu($('CoCMenuImage'),$('COClinksbox'));}
+	if($('SWMenuImage')){new ipb.Menu($('SWMenuImage'),$('SWlinksbox'));}
+	if($('ANMenuImage')){new ipb.Menu($('ANMenuImage'),$('ANlinksbox'));}
+	if($('LotRMenuImage')){new ipb.Menu($('LotRMenuImage'),$('LOTRlinksbox'));}
+	if($('WIMenuImage')){new ipb.Menu($('WIMenuImage'),$('WIlinksbox'));}
+	if($('MWMenuImage')){new ipb.Menu($('MWMenuImage'),$('MWlinksbox'));}
+
+});
+
+jQuery(document).on({
+  mouseenter: function(){
+      if (this.rel !=""){
+         setTimer(this.rel, this.innerHTML);
+      }
+  },
+  mouseleave: function(){
+    resetTimer();
+  }
+},'a[rel$="|CARD"]');
+
+resetTimer = function(e) {
+if(Timer){clearTimeout(Timer);}
+
+};
+
+function setTimer(trel,tinner){
+var cardimg = trel.split("|");
+tinner = tinner.replace(/\"/g,"&quot;");
+Timer = setTimeout('showImage("'+tinner+'","'+cardimg[0]+'",this)', 700);
+};
+
+/*********************
+First removes any previous images which have been displayed
+Then creates a new popup to view new image in
+*********************/
+function showImage(Name,Image,th){
+
+	$$('div[id*=cardPopup_popup]').each(function(element) {
+		element.remove();
+	});
+	$('cardtitle').innerHTML = Name;
+	$('cardcontainer_popup').innerHTML ='<img class="photo" alt="'+Name+'" style="max-height:400px;max-width:400px" src="forums/uploads/'+Image+'" />';
+	if(Prototype.Browser.IE){
+//		$('cardcontainer_popup').style.textAlign ='left';
+	}
+	popupDraggable = new Draggable('cardPopup', { revert: false, handle:'handle'});
+//	popupDraggable.destroy();
+	$('cardPopup').show();
+
+}
+
+document.observe("dom:loaded", function() {
+
+	$('closeCardPopup').observe('click', function(){
+		popupDraggable.destroy();
+		Effect.Fade($('cardPopup'), { duration: 0.3 });
+	});
+	$('minCardPopup').observe('click', function(){
+
+		popupDraggable.destroy();
+		$('cardHandle').setStyle({cursor:'auto'});
+		var vportH = document.viewport.getHeight()-60;
+		new Effect.Move('cardPopup', {
+		  x: 20, y: vportH, mode: 'absolute',
+		  transition: Effect.Transitions.spring
+		});
+
+	});
+	$('maxCardPopup').observe('click', function(){
+		popupDraggable.destroy();
+		var vportH = document.viewport.getHeight()-60;
+		new Effect.Move('cardPopup', {
+		  x: 20, y: 75, mode: 'absolute',
+		  transition: Effect.Transitions.spring
+		});
+
+		popupDraggable = new Draggable('cardPopup', { revert: false, handle:'handle'});
+
+		$('cardHandle').setStyle({cursor:'move'});
+	});
+});
+
+function fixJSON(t){
+if (t.slice(-2) == ",}"){
+	t= t.substr(0,t.length-2)+"}";
+}
+	return (t);
+}
+
+showSearchbox = function(e){
+if (!$('cardsearchbox').visible())
+	Effect.SlideDown($('cardsearchbox'));
+else
+	Effect.SlideUp($('cardsearchbox'));
+}
+</script>
+	
+		
+			
+			
+			
+			
+				<link rel="canonical" href="index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/" />
+			
+		
+	
+
+		
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Card Game DB Blogs RSS feed" href="forums/index.php?/rss/blog/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG" href="forums/index.php?/rss/ccs/21-android-netrunner-lcg/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks" href="forums/index.php?/rss/ccs/23-android-netrunner-lcg-submitted-decks/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Call of Cthulhu Submitted Decks" href="forums/index.php?/rss/ccs/9-call-of-cthulhu-submitted-decks/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB Podcasts" href="forums/index.php?/rss/ccs/10-cardgamedb-podcasts/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG" href="forums/index.php?/rss/ccs/3-game-of-thrones-lcg/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones Submitted Decks" href="forums/index.php?/rss/ccs/5-game-of-thrones-submitted-decks/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Mage Wars" href="forums/index.php?/rss/ccs/25-mage-wars/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Star Wars LCG" href="forums/index.php?/rss/ccs/24-star-wars-lcg/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Star Wars Submitted Decks" href="forums/index.php?/rss/ccs/28-star-wars-submitted-decks/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG: Core" href="forums/index.php?/rss/ccs/21c223-core/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: Anarch" href="forums/index.php?/rss/ccs/23c228-anarch/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: Criminal" href="forums/index.php?/rss/ccs/23c229-criminal/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: Shaper" href="forums/index.php?/rss/ccs/23c230-shaper/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: Haas-Bioroid" href="forums/index.php?/rss/ccs/23c231-haas-bioroid/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: Jinteki" href="forums/index.php?/rss/ccs/23c232-jinteki/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: NBN" href="forums/index.php?/rss/ccs/23c233-nbn/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: The Weyland Consortium" href="forums/index.php?/rss/ccs/23c234-the-weyland-consortium/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Android: Netrunner LCG Submitted Decks: Neutral" href="forums/index.php?/rss/ccs/23c235-neutral/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB Podcasts: Game of Thrones: Summer Is Coming" href="forums/index.php?/rss/ccs/10c210-game-of-thrones-summer-is-coming/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB Podcasts: Elder Things Call of Cthulhu Podcast" href="forums/index.php?/rss/ccs/10c243-elder-things-call-of-cthulhu-podcast/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB Podcasts: Star Wars: The Smuggler&#39;s Den" href="forums/index.php?/rss/ccs/10c263-star-wars-the-smugglers-den/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB Podcasts: Lord of the Rings" href="forums/index.php?/rss/ccs/10c139-lord-of-the-rings/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB Podcasts: Domain Drain Call of Cthulhu Podcast" href="forums/index.php?/rss/ccs/10c153-domain-drain-call-of-cthulhu-podcast/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB.com: Game of Thrones" href="forums/index.php?/rss/ccs/1c61-game-of-thrones/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB.com: Call of Cthulhu" href="forums/index.php?/rss/ccs/1c201-call-of-cthulhu/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB.com: Warhammer: Invasion" href="forums/index.php?/rss/ccs/1c218-warhammer-invasion/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB.com: Star Wars" href="forums/index.php?/rss/ccs/1c219-star-wars/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="CardGameDB.com: Android: Netrunner" href="forums/index.php?/rss/ccs/1c220-android-netrunner/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Kings of the Storm" href="forums/index.php?/rss/ccs/3c91-kings-of-the-storm/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: A Clash of Arms" href="forums/index.php?/rss/ccs/3c24-a-clash-of-arms/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: A Time of Ravens" href="forums/index.php?/rss/ccs/3c31-a-time-of-ravens/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: King&#39;s Landing" href="forums/index.php?/rss/ccs/3c38-kings-landing/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Defenders of the North" href="forums/index.php?/rss/ccs/3c11-defenders-of-the-north/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Brotherhood Without Banners" href="forums/index.php?/rss/ccs/3c45-brotherhood-without-banners/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Beyond the Narrow Sea" href="forums/index.php?/rss/ccs/3c187-beyond-the-narrow-sea/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Gates of the Citadel" href="forums/index.php?/rss/ccs/3c114-gates-of-the-citadel/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Valar Dohaeris" href="forums/index.php?/rss/ccs/3c189-valar-dohaeris/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: Chasing Dragons" href="forums/index.php?/rss/ccs/3c190-chasing-dragons/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: A Harsh Mistress" href="forums/index.php?/rss/ccs/3c191-a-harsh-mistress/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: The House of Black and White" href="forums/index.php?/rss/ccs/3c192-the-house-of-black-and-white/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Game of Thrones LCG: A Roll of the Dice" href="forums/index.php?/rss/ccs/3c193-a-roll-of-the-dice/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Mage Wars: Core" href="forums/index.php?/rss/ccs/25c244-core/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Video: Darrowdelf" href="forums/index.php?/rss/ccs/2c221-darrowdelf/" />
+			
+			
+			
+		
+	
+
+	
+
+
+
+		
+		<script type='text/javascript'>
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'forums/index.php?s=e3aaadc80d6fe3a454f7d25d6d58a4ae&';
+		ipb.vars['board_url']			= 'forums';
+		ipb.vars['img_url'] 			= "forums/public/style_images/gravity_blue";
+		ipb.vars['loading_img'] 		= 'forums/public/style_images/gravity_blue/loading.gif';
+		ipb.vars['active_app']			= 'ccs';
+		ipb.vars['upload_url']			= 'forums/uploads';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 );
+		ipb.vars['is_supmod']			= parseInt( 0 );
+		ipb.vars['is_admin']			= parseInt( 0 );
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= 'e3aaadc80d6fe3a454f7d25d6d58a4ae';
+		ipb.vars['twitter_id']			= 0;
+		ipb.vars['fb_uid']				= 0;
+		ipb.vars['auto_dst']			= parseInt( 0 );
+		ipb.vars['dst_in_use']			= parseInt(  );
+		ipb.vars['is_touch']			= false;
+		ipb.vars['member_group']		= {"g_mem_info":"0"}
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= '';
+		ipb.vars['cookie_domain'] 		= '';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'forums/public/style_images/gravity_blue/star.png';
+		ipb.vars['rate_img_off']		= 'forums/public/style_images/gravity_blue/star_off.png';
+		ipb.vars['rate_img_rated']		= 'forums/public/style_images/gravity_blue/star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'forums/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false;
+		/* ---- other ---- */
+		ipb.vars['highlight_color']     = "#ade57a";
+		ipb.vars['charset']				= "UTF-8";
+		ipb.vars['seo_enabled']			= 1;
+		
+		ipb.vars['seo_params']			= {"start":"-","end":"\/","varBlock":"\/page__","varSep":"__"};
+		
+		/* Templates/Language */
+		ipb.templates['inlineMsg']		= "";
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'><img src='forums/public/style_images/gravity_blue/ajax_loading.gif' alt='" + ipb.lang['loading'] + "' /></div>";
+		ipb.templates['close_popup']	= "<img src='forums/public/style_images/gravity_blue/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu' class='ipbmenu_content'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}' data-url='#{url}'><img src='#{img}' alt='' class='ipsUserPhoto ipsUserPhoto_mini' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><p class='ipsPad'><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></p></div>");
+		ipb.templates['global_notify'] 	= new Template("<div class='popupWrapper'><div class='popupInner'><div class='ipsPad'>#{message} #{close}</div></div></div>");
+		
+		
+		ipb.templates['header_menu'] 	= new Template("<div id='#{id}' class='ipsHeaderMenu boxShadow'></div>");
+		
+		Loader.boot();
+	//]]>
+	</script>
+
+
+	<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script></head>
+
+	<body id='ipboard_body' style='padding-top:40px'>
+<!-- floating nav begin -->
+<!--
+
+-->
+<div id='user_bar'>          
+            
+            <div id='user_navigation' class='not_logged_in'>
+							                        <ul class='ipsList_inline right'><script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li id='gotTopMenu'><a id='GoTMenuImage' rel='GoT' style="cursor:pointer"><img src='forums/public/style_images/gravity_blue/got-lcg.png' style="height:34px" /></a><a id='GoTDeckbuilderLink' class='deckbuilderLink' href='/index.php/GoTDeckbuilder.html' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/GOTDeckBox.png' /></a><a href='/index.php/GoTCards.html/' id='GoTSpoilers' class='spoilerLink' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/got_spoiler_icon_large.png' /></a></li>
+<li id='swTopMenu'><a id='SWMenuImage' rel='SW' style="cursor:pointer"><img src='forums/public/style_images/gravity_blue/StarWars_logo.png' /><a id='SWDeckbuilderLink' class='deckbuilderLink' href='index.php/starwars/star-wars-deck-builder' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/SWDeckBox.png' /></a><a href='index.php/starwars/star-wars-card-spoilers' id='SWSpoilers' class='spoilerLink' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/sw_spoiler_icon_large.png' /></a></li>
+<li id='anTopMenu'><a id='ANMenuImage' rel='AN' style="cursor:pointer"><img src='forums/public/style_images/gravity_blue/netrunner-lcg.png' style="width: 100px;" /><a id='ANDeckbuilderLink' class='deckbuilderLink' href='index.php/netrunner/android-netrunner-deck-builder' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/netrunner-deck-box.png' /></a><a id='ANSpoilers' class='spoilerLink' href='index.php/netrunner/android-netrunner-card-spoilers/' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/netrunner-spoiler-icon.png' /></a></li>
+<li id='lotrTopMenu'><a id='LotRMenuImage' rel='LotR' style="cursor:pointer"><img src='forums/public/style_images/gravity_blue/lotr-logo.png' /><a id='LotRDeckbuilderLink' class='deckbuilderLink' href='/index.php/lotr/lord-of-the-rings-deckbuilder' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/LOTRDeckBox.png' /></a><a id='LotRSpoilers' class='spoilerLink' style='padding: 0 1px' href="/index.php/lotr/lord-of-the-rings-card-spoiler"><img src='forums/public/style_images/gravity_blue/lotr_spoiler_icon_large.png' /></a></li>
+<li id='cocTopMenu'><a id='CoCMenuImage' rel='CoC' style="cursor:pointer"><img src='forums/public/style_images/gravity_blue/logo_callofcthulhu2.png' /></a><a id='CoCDeckbuilderLink' class='deckbuilderLink' href='/index.php/CoC/cocdeckbuilder.html' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/COCDeckBox.png' /></a><a id='CoCSpoilers' class='spoilerLink' style='padding: 0 1px' href="/index.php/CoC/CoCCards.html"><img src='forums/public/style_images/gravity_blue/coc_spoiler_icon_large.png' /></a></li>
+<li id='wiTopMenu'><a id='WIMenuImage' rel='WI' style="cursor:pointer"><img src='forums/public/style_images/gravity_blue/logo_wi.png' /></a><a id='WIDeckbuilderLink' class='deckbuilderLink' href='/index.php/warhammer/warhammer-invasion-deck-builder' style='padding: 0 1px'><img src='forums/public/style_images/gravity_blue/WIDeckBox.png' /></a><a id='WISpoilers' class='spoilerLink' style='padding: 0 1px' href="/index.php/warhammer/warhammer-invasion-card-spoilers"><img src='forums/public/style_images/gravity_blue/wi_spoiler_icon_large.png' /></a></li>
+<li id='mwTopMenu'><a id='MWMenuImage' rel='MW' style="cursor:pointer"><img src='forums/uploads/mage-wars-icon.png' /></a></li>
+<style type="text/css">
+@media (max-width: 1260px) {
+   .spoilerLink { 
+      display: none;
+   }
+}
+@media (max-width: 1100px) {
+   .deckbuilderLink { 
+      display: none;
+   }
+}
+</style></ul>
+							<ul class='ipsList_inline'>
+								<li>
+									<span class='services'>
+										
+											<a href='forums/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=facebook'><img src='forums/public/style_images/gravity_blue/loginmethods/facebook.png' alt='Log in with Facebook' /></a>
+										
+										
+											<a href='forums/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=twitter'><img src='forums/public/style_images/gravity_blue/loginmethods/twitter.png' alt='Log in with Twitter' /></a>
+										
+										
+									</span>
+									<a href='forums/index.php?app=core&amp;module=global&amp;section=login' title='Sign In' id='sign_in'><img src="forums/public/style_images/gravity_blue/user_login.png" alt="" /> Sign In</a>
+								</li>
+								<li>
+									<a href="forums/index.php?app=core&amp;module=global&amp;section=register" title='Create Account' id='register_link'><img src="forums/public/style_images/gravity_blue/user_register.png" alt="" /> Create Account</a>
+								</li>
+							</ul>
+						</div>
+            </div>
+<!-- floating nav end -->
+<!-- quick card search begin -->
+<div style="position: fixed; z-index: 101; left: 50%; margin-left: -400px; top: 34px; width: 800px; "><div id='cardsearchbox' style="display:none"><script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <script type='text/javascript'>
+qGOTCardType = '<select id="qCardType"><option value="Any">Any</option><option value="House">House</option><option value="Agenda">Agenda</option><option value="Plot">Plot</option><option value="Character">Character</option><option value="Location">Location</option><option value="Attachment">Attachment</option><option value="Event">Event</option></select>';
+qCOCCardType = '<select id="qCardType"><option value="Any">Any</option><option value="Character">Character</option><option value="Conspiracy">Conspiracy</option><option value="Event">Event</option><option value="Story">Story</option><option value="Support">Support</option></select>';
+qGOTHouses = '<select id="qCardFaction"><option value="Any">Any</option><option value="Baratheon">Baratheon</option><option value="Greyjoy">Greyjoy</option><option value="Lannister">Lannister</option><option value="Martell">Martell</option><option value="Stark">Stark</option><option value="Targaryen">Targaryen</option><option value="Neutral">Neutral</option></select>';
+qCOCFactions = '<select id="qCardFaction"><option value="Any">Any</option><option value="Cthulhu">Cthulhu</option><option value="Hastur">Hastur</option><option value="Miskatonic University">Miskatonic University</option><option value="Shub-Niggurath">Shub-Niggurath</option><option value="Silver Twilight">Silver Twilight</option><option value="Syndicate">Syndicate</option><option value="The Agency">The Agency</option><option value="Yog-Sothoth">Yog-Sothoth</option><option value="Neutral">Neutral</option></select>';
+qGOTSets = '<select id="qCardSet" name="qCardSet"><option value="0">Any Set</option><option value="17">Core Set</option><option value="19">Kings of the Sea</option><option value="18">Princes of the Sun</option><option value="16">Lords of Winter</option><option value="91">Kings of the Storm</option><option value="124">Queen of Dragons</option><option value="161">Lions of the Rock</option><option value="25,26,27,28,29,30">Any A Clash of Arms</option><option value="25">&nbsp;&nbsp;|-- The War of the Five Kings</option><option value="26">&nbsp;&nbsp;|-- Ancient Enemies</option><option value="27">&nbsp;&nbsp;|-- Sacred Bonds</option><option value="28">&nbsp;&nbsp;|-- Epic Battles</option><option value="29">&nbsp;&nbsp;|-- Battle of Ruby Ford</option><option value="30">&nbsp;&nbsp;|-- Calling the Banners</option><option value="32,33,34,35,36,37">Any A Time For Ravens</option><option value="32">&nbsp;&nbsp;|-- A Song of Summer</option><option value="33">&nbsp;&nbsp;|-- The Winds of Winter</option><option value="34">&nbsp;&nbsp;|-- A Change of Seasons</option><option value="35">&nbsp;&nbsp;|-- The Raven&#39;s Song</option><option value="36">&nbsp;&nbsp;|-- Refugees of War</option><option value="37">&nbsp;&nbsp;|-- Scattered Armies</option><option value="39,40,41,42,43,44">Any King&#39;s Landing</option><option value="39">&nbsp;&nbsp;|-- City of Secrets</option><option value="40">&nbsp;&nbsp;|-- A Time of Trials</option><option value="41">&nbsp;&nbsp;|-- The Tower of the Hand</option><option value="42">&nbsp;&nbsp;|-- Tales from the Red Keep</option><option value="43">&nbsp;&nbsp;|-- Secrets and Spies</option><option value="44">&nbsp;&nbsp;|-- The Battle of Blackwater Bay</option><option value="23,22,21,20,15,14">Any Defenders of the North</option><option value="23">&nbsp;&nbsp;|-- Wolves of the North</option><option value="22">&nbsp;&nbsp;|-- Beyond the Wall</option><option value="21">&nbsp;&nbsp;|-- A Sword in the Darkness</option><option value="20">&nbsp;&nbsp;|-- The Wildling Horde</option><option value="15">&nbsp;&nbsp;|-- A King in the North</option><option value="14">&nbsp;&nbsp;|-- Return of the Others</option><option value="46,47,48,49,50,51">Any Brotherhood Without Banners</option><option value="46">&nbsp;&nbsp;|-- Illyrio&#39;s Gift</option><option value="47">&nbsp;&nbsp;|-- Rituals of R&#39;hllor</option><option value="48">&nbsp;&nbsp;|-- Mountains of the Moon</option><option value="49">&nbsp;&nbsp;|-- A Song of Silence</option><option value="50">&nbsp;&nbsp;|-- Of Snakes and Sand</option><option value="51">&nbsp;&nbsp;|-- Dreadfort Betrayal</option><option value="114,134,135,136,137,138">Any Secrets of Oldtown</option><option value="114">&nbsp;&nbsp;|-- Gates of the Citadel</option><option value="134">&nbsp;&nbsp;|-- Forging the Chain</option><option value="135">&nbsp;&nbsp;|-- Called by the Conclave</option><option value="136">&nbsp;&nbsp;|-- The Isle of Ravens</option><option value="137">&nbsp;&nbsp;|-- Mask of the Archmaester</option><option value="138">&nbsp;&nbsp;|-- Here to Serve</option><option value="155,156,157,158,159,160">A Tale of Champions</option><option value="155">&nbsp;&nbsp;|-- Tourney for the Hand</option><option value="156">&nbsp;&nbsp;|-- The Grand Melee</option><option value="157">&nbsp;&nbsp;|-- On Dangerous Grounds</option><option value="158">&nbsp;&nbsp;|-- Where Loyalty Lies</option><option value="159">&nbsp;&nbsp;|-- Trial by Combat</option><option value="160">&nbsp;&nbsp;|-- A Poisoned Spear</option><option value="188,189,190,191,192,193">Beyond The Narrow Sea</option><option value="188">&nbsp;&nbsp;|-- Valar Morghulis</option><option value="189">&nbsp;&nbsp;|-- Valar Dohaeris</option><option value="190">&nbsp;&nbsp;|-- Chasing Dragons</option><option value="191">&nbsp;&nbsp;|-- A Harsh Mistress</option><option value="192">&nbsp;&nbsp;|-- The House of Black and White</option><option value="193">&nbsp;&nbsp;|-- A Roll of the Dice</option></select>';
+qCOCSets = '<select id="qCardSet" name="qCardSet"><option value="0">Any Set</option><option value="64">Core Set</option><option value="82">Secrets of Arkham</option><option value="115">The Order of the Silver Twilight</option><option value="66,67,68,69,70,71">Summons of the Deep</option><option value="66">&nbsp;&nbsp;|-- The Spawn of the Sleeper</option><option value="67">&nbsp;&nbsp;|-- The Horror Beneath the Surface</option><option value="68">&nbsp;&nbsp;|-- The Antediluvian Dreams</option><option value="69">&nbsp;&nbsp;|-- The Terror of the Tides</option><option value="70">&nbsp;&nbsp;|-- The Thing from the Shore</option><option value="71">&nbsp;&nbsp;|-- The Path to Y&#39;ha-nthlei</option><option value="73,74,75,76,77,78">Dreamlands</option><option value="73">&nbsp;&nbsp;|-- Twilight Horror</option><option value="74">&nbsp;&nbsp;|-- In Memory of Day</option><option value="75">&nbsp;&nbsp;|-- In the Dread of Night</option><option value="76">&nbsp;&nbsp;|-- Search for the Silver Key</option><option value="77">&nbsp;&nbsp;|-- Sleep of the Dead</option><option value="78">&nbsp;&nbsp;|-- Journey to Unknown Kadath</option><option value="80,81,142,143">Forgotten Lore</option><option value="80">&nbsp;&nbsp;|-- At the Mountains of Madness</option><option value="81">&nbsp;&nbsp;|-- Ancient Horrors</option><option value="142">&nbsp;&nbsp;|-- Spawn of Madness</option><option value="143">&nbsp;&nbsp;|-- Kingsport Dreams</option><option value="162">&nbsp;&nbsp;|-- Conspiracies of Chaos</option><option value="172">&nbsp;&nbsp;|-- Dunwich Denizens</option><option value="84,85,86,87,88,89">The Yuggoth Contract</option><option value="84">&nbsp;&nbsp;|-- Whispers in the Dark</option><option value="85">&nbsp;&nbsp;|-- Murmurs of Evil</option><option value="86">&nbsp;&nbsp;|-- The Spoken Covenant</option><option value="87">&nbsp;&nbsp;|-- The Wailer Below</option><option value="88">&nbsp;&nbsp;|-- Screams from Within</option><option value="89">&nbsp;&nbsp;|-- The Cacophony</option><option value="118,119,120,121,122,123">The Rituals of the Order</option><option value="118">&nbsp;&nbsp;|-- The Twilight Beckons</option><option value="119">&nbsp;&nbsp;|-- Perilous Trials</option><option value="120">&nbsp;&nbsp;|-- Initiations of the Favored</option><option value="121">&nbsp;&nbsp;|-- Aspirations of Ascension</option><option value="122">&nbsp;&nbsp;|-- The Gleaming Spiral</option><option value="123">&nbsp;&nbsp;|-- That Which Consumes</option><option value="145,146,147,148,149,150">Ancient Relics</option><option value="145">&nbsp;&nbsp;|-- The Shifting Sands</option><option value="146">&nbsp;&nbsp;|-- Curse of the Jade Emperor</option><option value="147">&nbsp;&nbsp;|-- The Breathing Jungle</option><option value="148">&nbsp;&nbsp;|-- Never Night</option><option value="149">&nbsp;&nbsp;|-- Into Tartarus</option><option value="150">&nbsp;&nbsp;|-- Shadow of the Monolith</option><option value="212,213,214,215,216,217">Revelations</option><option value="212">&nbsp;&nbsp;|-- Written and Bound</option><option value="213">&nbsp;&nbsp;|-- Words of Power</option><option value="214">&nbsp;&nbsp;|-- Ebla Restored</option><option value="215">&nbsp;&nbsp;|-- Lost Rites</option><option value="216">&nbsp;&nbsp;|-- The Unspeakable Pages</option><option value="217">&nbsp;&nbsp;|-- Touched by the Abyss</option></select>';
+
+qLOTRCardType = '<select id="qCardType"><option value="Any">Any</option><option value="Hero">Hero</option><option value="Ally">Ally</option><option value="Attachment">Attachment</option><option value="Event">Event</option><option value="Enemy">Enemy</option><option value="Location">Location</option><option value="Treachery">Treachery</option><option value="Objective">Objective</option><option value="Quest">Quest</option></select>';
+qLOTRFactions = '<select id="qCardFaction"><option value="Any">Any</option><optgroup label="Hero Spheres"><option value="Leadership">Leadership</option><option value="Lore">Lore</option><option value="Spirit">Spirit</option><option value="Tactics">Tactics</option><option value="Neutral">Neutral</option></optgroup><optgroup label="Encounters"><option value="Escape from Dol Guldur">Escape from Dol Guldur</option><option value="Dol Guldur Orcs">Dol Guldur Orcs</option><option value="Spiders of Mirkwood">Spiders of Mirkwood</option><option value="Journey Down the Anduin">Journey Down the Anduin</option><option value="Sauron`s Reach">Sauron`s Reach</option><option value="Wilderlands">Wilderlands</option><option value="Passage Through Mirkwood">Passage Through Mirkwood</option></optgroup></select>';
+qLOTRSets = '<select id="qCardSet" name="qCardSet"><option value="0">Any Set</option><option value="116">Core Set</option><option value="186">Khazad-dum</option><option value="126,127,128,129,130,131">Shadows of Mirkwood</option><option value="126">&nbsp;&nbsp;|-- The Hunt for Gollum</option><option value="127">&nbsp;&nbsp;|-- Conflict at the Carrock</option><option value="128">&nbsp;&nbsp;|-- A Journey to Rhosgobel</option><option value="129">&nbsp;&nbsp;|-- The Hills of Emyn Muil</option><option value="130">&nbsp;&nbsp;|-- The Dead Marshes</option><option value="131">&nbsp;&nbsp;|-- Return to Mirkwood</option><option value="204,205,206,207,208,209">Dwarrowdelf</option><option value="204">&nbsp;&nbsp;|-- The Redhorn Gate</option><option value="205">&nbsp;&nbsp;|-- Road to Rivendell</option><option value="206">&nbsp;&nbsp;|-- The Watcher in the Water</option><option value="207">&nbsp;&nbsp;|-- The Long Dark</option><option value="208">&nbsp;&nbsp;|-- Foundations of Stone</option><option value="209">&nbsp;&nbsp;|-- Shadow and Flame</option></select>';
+
+
+function activateGame(qGame){
+	
+	if (qGame == 'GOT'){
+		$('qGameName').innerHTML = 'Game of Thrones';
+		$('qTDCardType').innerHTML = qGOTCardType;
+		$('qTDCardFaction').innerHTML = qGOTHouses;
+		$('qTDCardSet').innerHTML = qGOTSets ;
+		qSelectedGame = 'GOT';
+	} else if (qGame == 'COC'){
+		$('qGameName').innerHTML = 'Call of Cthulhu';
+		$('qTDCardType').innerHTML = qCOCCardType;
+		$('qTDCardFaction').innerHTML = qCOCFactions;
+		$('qTDCardSet').innerHTML = qCOCSets ;
+		qSelectedGame = 'COC';
+	}
+	else if (qGame == 'LOTR'){
+		$('qGameName').innerHTML = 'Lord of the Rings';
+		$('qTDCardType').innerHTML = qLOTRCardType;
+		$('qTDCardFaction').innerHTML = qLOTRFactions;
+		$('qTDCardSet').innerHTML = qLOTRSets ;
+		qSelectedGame = 'LOTR';
+	}	
+	if (qGame != 'NONE' && qGame != ''){
+		//$('qGameSelect').hide();
+		$('qSearchResults').innerHTML = '';
+		Effect.SlideUp('qGameSelect');
+//		$('qGameSwitch').show();
+		Effect.SlideDown('qSearchFields');
+		
+	} else {
+		Effect.SlideDown('qGameSelect');
+//		$('qGameSwitch').hide();
+		//$('qSearchFields').hide();
+		Effect.SlideUp('qSearchFields');
+		
+	}
+}
+
+var qSelectedGame;
+var valSearch = {};
+
+
+//////////////////////////////////////////////
+//ajaxFilter()
+//sends request to server to filter returned cards\
+/////////////////////////////////////////////
+function qCardFilter(tpage){
+
+	if (isNaN(tpage)){
+		valSearch = {};
+		valSearch.type = $('qCardType').getValue();
+		valSearch.text = $('qCardText').getValue();
+		valSearch.name = $('qCardName').getValue();
+		valSearch.trait = $('qCardTrait').getValue();
+		valSearch.ft = $('qfTS').getValue();
+		valSearch.faction = $('qCardFaction').getValue();
+		valSearch.cset =  $('qCardSet').getValue();
+		valSearch.game = qSelectedGame;
+	}
+	new Ajax.Updater("qSearchResults","index.php/assets/cardsearch",
+		{
+			method: 'post',
+			parameters:{
+				fType: valSearch.type,
+				fText: valSearch.text,
+				fName: valSearch.name,
+				fTrait: valSearch.trait,
+				fullText: valSearch.ft,
+				fHouse: valSearch.faction,
+				fSet: valSearch.cset,
+				fGame: valSearch.game,
+				fPage: tpage
+
+			},
+			onSuccess: function(t)
+			{
+
+				if ( ! t.responseText )
+				{
+					return false;
+				}
+				else
+				{
+					
+
+				}
+
+			},
+			onComplete: function(t)
+			{
+				$('qSearchResults').scrollTop = 0;
+//				$('ajax_loading').hide();
+
+				$$('.quicksearch_page').each( function(link){
+					link.observe( 'click', setit);		
+				});
+				$$('a[rel*=|QSCARD]').each(function(element) {
+  					element.observe('mouseenter', setTimer);
+  					element.observe('mouseleave', resetTimer );
+  					});
+
+
+			},
+			//onException: function( f,e ){ alert( "Exception: " + e ) },
+			onFailure: function( t ){ alert( "Failure: " + t.responseText ) }
+		}
+	);
+}
+setit =  function(e) {
+qCardFilter(this.down('a').readAttribute('rel'))
+}
+</script>
+<div id='qGameSelect' style='margin-top:15px'><div>
+<h2>Welcome to Card Game DB!</h2>
+<p><a class="input_submit" style="padding:6px 12px;font-size:1em;" href="forums/index.php?app=core&amp;module=global&amp;section=register" title='Create Account' id='register_link'>Create Account</a> or <a class="input_submit alt trigger-login" style="padding:6px 12px;font-size:1em;" href='forums/index.php?app=core&amp;module=global&amp;section=login'>
+			Sign In
+			<img src='forums/public/style_images/gravity_blue/loginmethods/facebook.png' alt='Log in with Facebook' />
+			<img src='forums/public/style_images/gravity_blue/loginmethods/twitter.png' alt='Log in with Twitter' />
+			
+			</a>&nbsp;to get access to all our features.
+</p><br /><p>Would you like to search a game?</p><br />
+<img src="/forums/uploads/got-button.jpg" class="photo" style="cursor:pointer;height:50px" alt="Game of Thrones" onclick="javascript:activateGame('GOT');" />
+
+<img src="/forums/uploads/coc_icon.png" class="photo" style="cursor:pointer;height:50px" alt="Call of Cthulhu" onclick="javascript:activateGame('COC');" />
+<img src="/forums/uploads/lotr-button.jpg" class="photo" style="cursor:pointer;height:50px" alt="Lord of the Rings" onclick="javascript:activateGame('LOTR');" />
+
+</div>
+</div>
+<br />
+<div id='qSearchFields' style='display:none' class='general_box'>
+<table border = '0' style='color:black;text-shadow:none'>
+	<tr><th colspan='4'>Searching <span id='qGameName' style='text-shadow:none;color:black'></span> <span id='qGameSwitch' onclick="javascript:activateGame('NONE');" style='text-shadow:none;color:black;cursor:pointer'><img src='/forums/public/style_images/master/back.png' />(Back)</span></th></tr>
+	<tr>
+		<td>Name:</td>
+		<td><input type="text" id="qCardName"></td>
+		<td>Type</td>
+		<td id='qTDCardType'>	
+		</td>
+	</tr>
+	<tr>
+		<td>Trait:</td>
+		<td><input type="text" id="qCardTrait"></td>
+		<td>Faction:</td>
+		<td id='qTDCardFaction'>
+		</td>
+	</tr>
+	<tr>
+		<td>Text:</td>
+		<td><input type="text" id="qCardText"></td>
+		<td>Set:</td>
+		<td id='qTDCardSet'>
+		</td>
+	</tr>
+	<tr>
+		<td colspan='4'>
+			<input type="submit" value="Search" class="input_submit alt" onclick="javascript:qCardFilter();return false;">
+			&nbsp;<input type="checkbox" checked="" value="fulltext" id="qfTS"> fulltext search?
+		</td>
+	</tr>
+	<tr>
+		<td colspan='4'>
+			<div id="qSearchResults" class="general_box" style="text-shadow:none;max-height:500px;overflow-y:scroll"></div>
+		</td>
+	</tr>
+</table>
+</div> </div>
+			<div style="background: #343434;   border-bottom-left-radius: 3px;  border-bottom-right-radius: 3px; width: 100px; color: white; font-weight: bold; z-index: 996; text-align: center;  left: 48%; position: absolute; height: 20px; padding-top: 4px;border:1px solid #555;"><a id='GoTQSearch' style='padding: 0 1px; cursor: pointer; color:white;'><img src="forums/public/style_images/gravity_blue/search_icon.png"> Search Cards</a></div>
+			</div>
+<!-- quick card search end-->
+		<p id='content_jump' class='hide'><a href='#j_content' title='Jump to content' accesskey='m'>Jump to content</a></p>
+		<div id='ipbwrapper' class='wrapper'>
+			<!-- ::: TOP BAR: Sign in / register or user drop down and notification alerts ::: -->			
+					
+
+			<!-- ::: BRANDING STRIP: Logo and search box ::: -->
+			<div id='branding'>
+                <div id='logo'>
+                    
+                        <a href='http://www.cardgamedb.com' title='Go to community index' rel="home" accesskey='1'><img src='forums/public/style_images/gravity_blue/logo.png' alt='Logo' /></a>
+                    
+                </div>
+                <div id='search' class='right'>
+	<form action="forums/index.php?app=core&amp;module=search&amp;do=search&amp;fromMainBar=1" method="post" id='search-box' >
+		<fieldset>
+			<label for='main_search' class='hide'>Search</label>
+			<a href='forums/index.php?app=core&amp;module=search&amp;search_in=ccs' title='Advanced Search' accesskey='4' rel="search" id='adv_search' class='right'>Advanced</a>
+			<span id='search_wrap' class='right'>
+				<input type='text' id='main_search' name='search_term' class='inactive' size='17' tabindex='6' />
+				<span class='choice ipbmenu clickable' id='search_options' style='display: none'></span>
+				<ul id='search_options_menucontent' class='ipbmenu_content ipsPad' style='display: none'>
+					<li class='title'><strong>Search section:</strong></li>
+					
+					
+					
+							
+		<li class='special'><label for='s_ccs_cat' title='Category: A Study in Static'><input type='radio' name='search_app' value="ccs:database:21-264" class='input_radio' id='s_ccs_cat' checked='checked' /> <strong>Category: A Study in Static</strong></label></li>
+		<li class='special'><label for='s_ccs_db' title='Android: Netrunner LCG'><input type='radio' name='search_app' value="ccs:database:21" class='input_radio' id='s_ccs_cat' /> <strong>Android: Netrunner LCG</strong></label></li>
+	
+						
+					<li class='app'><label for='s_forums' title='Forums'><input type='radio' name='search_app' class='input_radio' id='s_forums' value="forums"  />Forums</label></li><li class='app'><label for='s_members' title='Members'><input type='radio' name='search_app' class='input_radio' id='s_members' value="members"  />Members</label></li><li class='app'><label for='s_core' title='Help Files'><input type='radio' name='search_app' class='input_radio' id='s_core' value="core"  />Help Files</label></li>
+						
+					
+
+						
+					
+
+						
+					
+
+						<li class='app'><label for='s_blog' title='Blogs'><input type='radio' name='search_app' class='input_radio' id='s_blog' value="blog"  />Blogs</label></li>
+					
+
+						<li class='app'><label for='s_gallery' title='Gallery'><input type='radio' name='search_app' class='input_radio' id='s_gallery' value="gallery"  />Gallery</label></li>
+					
+
+						
+					
+
+						<li class='app'><label for='s_ccs' title='Pages'><input type='radio' name='search_app' class='input_radio' id='s_ccs' value="ccs"  />Pages</label></li>
+					
+
+						
+					
+
+						
+					
+
+						
+					
+
+						
+					
+				</ul>
+				<input type='submit' class='submit_input clickable' value='Search' />
+			</span>
+			
+		</fieldset>
+	</form>
+</div>
+			</div>
+            
+            <div class='content'><div id='left_col'>
+            <span id='navigationToggle'></span>
+            	<div id='left_col_top'>
+                    <!-- ::: APPLICATION TABS ::: -->
+		<div id='primary_nav' class='clearfix'>
+                <ul class='ipsList_inline' id='community_app_menu'>
+                                            <li id='nav_home' class='left active'><a href='http://www.cardgamedb.com' title='Homepage' rel="home"><img src="forums/public/style_images/gravity_blue/menu_icon.gif" alt="" class="nav_icon" /> Card Game DB</a></li>
+                    
+                    
+                            	
+		
+			
+				
+										
+				
+
+										
+				
+
+										
+				
+
+										
+				
+			
+			
+		
+
+			
+				
+										
+				
+
+										
+				
+
+										
+				
+
+										
+				
+			
+			<li id='nav_app_forums' class="left "><a href='forums/' title='Go to Forums' ><img src="forums/public/style_images/gravity_blue/menu_icon.gif" alt="" class="nav_icon" /> Forums</a></li>
+		
+
+			
+				
+										
+				
+
+										
+				
+
+										
+				
+
+										
+				
+			
+			<li id='nav_app_blog' class="left "><a href='forums/index.php?/blogs/' title='Go to Blogs' ><img src="forums/public/style_images/gravity_blue/menu_icon.gif" alt="" class="nav_icon" /> Blogs</a></li>
+		
+
+			
+				
+										
+				
+
+										
+				
+
+										
+				
+
+										
+				
+			
+			<li id='nav_app_membermap' class="left "><a href='forums/index.php?/membermap/' title='Go to Member Map' ><img src="forums/public/style_images/gravity_blue/menu_icon.gif" alt="" class="nav_icon" /> Member Map</a></li>
+		
+	
+	
+		
+						
+		
+
+						<li id='nav_menu_2' class="left  ">
+					<a id='nav_menu_2_trigger' href='index.php/podcasts' title='' ><img src="forums/public/style_images/gravity_blue/menu_icon.gif" alt="" class="nav_icon" />Podcasts </a>
+					
+					
+				</li>
+		
+
+						<li id='nav_menu_3' class="left  ">
+					<a id='nav_menu_3_trigger' href='index.php/media.html' title='' ><img src="forums/public/style_images/gravity_blue/menu_icon.gif" alt="" class="nav_icon" />Videos </a>
+					
+					
+				</li>
+		
+
+						
+		
+	
+                        
+                    <li id='nav_other_apps' style='display: none'>
+                        <a href='#' class='ipbmenu' id='more_apps'>More <img src='forums/public/style_images/gravity_blue/useropts_arrow.png' /></a>
+                    </li>
+                </ul>
+			<script type='text/javascript'>
+				// if( $('primary_nav') ){ ipb.global.activateMainMenu(); }
+			</script>
+		</div>
+
+                </div>
+                <div id='main_content' class='clearfix'>
+            
+            
+			<!-- ::: MAIN CONTENT AREA ::: -->
+			<div id='content' class='clearfix'>
+				<!-- ::: NAVIGATION BREADCRUMBS ::: -->
+
+					<div id='secondary_navigation' class='clearfix'>
+                    
+						<ol class='breadcrumb top ipsList_inline left' id='breadcrumb'>
+														<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class='first'>
+									<a href='forums/' itemprop="url">
+										<span itemprop="title">Card Game DB</span>
+									</a>
+								</li>
+								
+							
+								<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+									 <a href='forums/index.php?app=ccs' title='Return to Pages' itemprop="url"><span itemprop="title">Pages</span></a>
+								</li>
+								
+							
+
+								<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+									 <a href='index.php/netrunner/android-netrunner-card-spoilers' title='Return to Android: Netrunner Card Spoilers' itemprop="url"><span itemprop="title">Android: Netrunner Card Spoilers</span></a>
+								</li>
+								
+							
+
+								<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+									 <a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/' title='Return to Genesis' itemprop="url"><span itemprop="title">Genesis</span></a>
+								</li>
+								
+							
+
+								<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+									 <a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/' title='Return to A Study in Static' itemprop="url"><span itemprop="title">A Study in Static</span></a>
+								</li>
+								
+							
+						</ol>
+                        
+                    <ul id='secondary_links' class='ipsList_inline right'>
+                        
+                        <li><a href="http://www.facebook.com/cardgamedb" title="Visit us on Facebook"><img src="forums/public/style_images/gravity_blue/social_facebook.png" alt="" /></a></li>
+                        
+                        <li><a href="https://plus.google.com/102220041869382433375" title="Visit us on Google+" style="text-decoration:none;"><img src="forums/public/style_images/gravity_blue/google_plus_icon1.png" alt="" /></a></li>
+                        
+                        <li><a href="http://twitter.com/#!/cardgamedb" title="Follow us on Twitter"><img src="forums/public/style_images/gravity_blue/social_twitter.png" alt="" /></a></li>
+                        
+                        
+                    </ul>
+                </div>
+				
+                
+                <div class='guestMessage'>
+                	<strong>Welcome to Card Game DB</strong><br />
+                    Register now to gain access to all of our features. Once registered and logged in, you will be able to create topics, post replies to existing threads, give reputation to your fellow members, get your own private messenger, post status updates, manage your profile and so much more. If you already have an account, <a href='forums/index.php?app=core&amp;module=global&amp;section=login'>login here</a> - otherwise <a href='forums/index.php?app=core&amp;module=global&amp;section=register'>create an account</a> for free today!
+                </div>
+                
+                
+                	<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <!--<div class='guestMessage' style="background:#F1C6AA;border:1px solid #D7E9A8;color:#5D8005">
+<img src="forums/uploads/what-lies-ahead.jpg" style="height:75px;float:left" />
+
+ <a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/what-lies-ahead/'>Android: Netrunner What Lies Ahead spoilers</a> Website will be down for 45 minutes at 11 PM Central Standard Time <br/>
+  <a href='index.php/warhammer/warhammer-invasion-card-spoilers/_/the-bloodquest-cycle/shield-of-the-gods/'>Warhammer: Invasion Shield of the Gods spoilers</a> are up!
+     <strong>Notice:</strong><br />          	<strong  style="background:#F0F6E2;border:1px solid #D7E9A8;color:#5D8005;min-height:77px">Notice!</strong><br />
+    I'm aware of the site stability issues that have been happening recently and I'm working on correcting the problem, I don't have a timeframe at the moment for a fix.
+                Follow cardgamedb on <a href="http://www.facebook.com/cardgamedb">Facebook</a>, <a href="http://twitter.com/#!/cardgamedb">Twitter</a>, or <a href="https://plus.google.com/102220041869382433375">Google+</a> to recieve updates when we are down.
+</div>--> 
+                
+                
+				
+                <noscript>
+                    <div class='message error'>
+                        <strong>Javascript Disabled Detected</strong>
+                        <p>You currently have javascript disabled. Several functions may not work. Please re-enable javascript to access full functionality.</p>
+                    </div>
+                    <br />
+                </noscript>
+				<!-- ::: CONTENT ::: -->
+				
+				<div class='site_callout'>
+
+</div>
+<div id='videos'>
+	<div>
+		
+
+
+
+
+<h1 class='ipsType_pagetitle'>A Study in Static</h1>
+
+<br />
+
+
+
+<div class='topic_controls'>
+                
+        
+                <ul class='topic_buttons'>
+                        
+                                <li class='disabled'><span>You cannot add cards</span></li>
+                        
+                </ul>
+        </div>
+        <br />
+        <div class='maintitle ipsFilterbar'>
+                <ul class="ipsList_inline ipsType_small">
+                        
+                                                <li class=""><a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/?sort_col=record_updated&sort_order=desc'>Recently Updated</a></li>
+                                                <li class=""><a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/?sort_col=record_saved&sort_order=desc'>Date Added</a></li>
+                                                <li class=""><a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/?sort_col=record_views&sort_order=desc'>Most Views</a></li>
+                                                <li class="active"<a href='#cat_filter_menucontent' id='cat_filter'>Custom</a></li>
+                                        
+                </ul>
+        </div>
+        <div id='cat_filter_menucontent' class='ipbmenu_content ipsPad' style='display: none'>
+                <form id='filter_form' action="index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/" method="post">
+                        <strong>Sort by</strong><br />
+                        <select name='sort_col'>
+                                <option value='primary_id_field'>Card ID</option>
+                                <option value='member_id'>Member ID</option>
+                                <option value='record_saved'>Submission Date</option>
+                                <option value='record_updated'>Last Updated Date</option>
+                                <option value='rating_real'>Rating</option>
+                                <option value='record_views'>Views</option>
+                                
+                                        <option value='field_225' selected='selected'>Card Name</option>
+                                
+
+                                        <option value='field_237'>Card Number</option>
+                                
+
+                                        <option value='field_241'>Side</option>
+                                
+
+                                        <option value='field_226'>Card Type</option>
+                                
+
+                                        <option value='field_227'>Subtype</option>
+                                
+
+                                        <option value='field_228'>Cost</option>
+                                
+
+                                        <option value='field_229'>Strength</option>
+                                
+
+                                        <option value='field_270'>Agenda Points</option>
+                                
+
+                                        <option value='field_230'>Memory</option>
+                                
+
+                                        <option value='field_231'>Trash Cost</option>
+                                
+
+                                        <option value='field_232'>Identity</option>
+                                
+
+                                        <option value='field_233'>Identity Cost</option>
+                                
+
+                                        
+                                
+
+                                        <option value='field_235'>Flavor Text</option>
+                                
+
+                                        <option value='field_236'>Set</option>
+                                
+
+                                        <option value='field_238'>Card Quantity</option>
+                                
+
+                                        <option value='field_239'>Illustrator</option>
+                                
+
+                                        <option value='field_264'>Runner Base Link Value</option>
+                                
+
+                                        <option value='field_269'>Errata</option>
+                                
+
+                                        <option value='field_310'>Show in Deckbuilder</option>
+                                
+                        </select>
+                        <br /><br />
+                
+                        <strong>Sort order</strong><br />
+                        <select name='sort_order'>
+                                <option value='asc' selected='selected'>Ascending (A-Z)</option>
+                                <option value='desc'>Descending (Z-A)</option>
+                        </select>
+                        <br /><br />
+
+                        <input type="submit" value="Sort" class="input_submit" />
+                </form>
+        </div>
+        <script type='text/javascript'>
+                new ipb.Menu( $('cat_filter'), $('cat_filter_menucontent'), { stopClose: true } );
+                function ImgError(source){
+		    source.onerror = "";
+		    source.src = "/forums/uploads/an/netrunner-image-missing.png";
+		    return true;
+		}
+        </script>
+        <div class='ipsBox'>
+		<div class='ipsBox_container'>
+			
+				<div class='no_messages'>No cards found</div>
+			
+		</div>
+                <div class="moderation_bar rounded with_action clear">
+			<form action='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/' method='post'>
+				Search
+				<input type='text' name='search_value' length='15' value='' />
+				Sort by 
+				<select name='sort_col'>
+					<option value='primary_id_field'>Card ID</option>
+					<option value='member_id'>Member ID</option>
+					<option value='record_saved'>Submission Date</option>
+					<option value='record_updated'>Last Updated Date</option>
+					<option value='rating_real'>Rating</option>
+					<option value='record_views'>Views</option>
+					
+						<option value='field_225' selected='selected'>Card Name</option>
+					
+
+						<option value='field_237'>Card Number</option>
+					
+
+						<option value='field_241'>Side</option>
+					
+
+						<option value='field_226'>Card Type</option>
+					
+
+						<option value='field_227'>Subtype</option>
+					
+
+						<option value='field_228'>Cost</option>
+					
+
+						<option value='field_229'>Strength</option>
+					
+
+						<option value='field_270'>Agenda Points</option>
+					
+
+						<option value='field_230'>Memory</option>
+					
+
+						<option value='field_231'>Trash Cost</option>
+					
+
+						<option value='field_232'>Identity</option>
+					
+
+						<option value='field_233'>Identity Cost</option>
+					
+
+						
+					
+
+						<option value='field_235'>Flavor Text</option>
+					
+
+						<option value='field_236'>Set</option>
+					
+
+						<option value='field_238'>Card Quantity</option>
+					
+
+						<option value='field_239'>Illustrator</option>
+					
+
+						<option value='field_264'>Runner Base Link Value</option>
+					
+
+						<option value='field_269'>Errata</option>
+					
+
+						<option value='field_310'>Show in Deckbuilder</option>
+					
+				</select> in
+				<select name='sort_order'>
+					<option value='asc' selected='selected'>Ascending (A-Z)</option>
+					<option value='desc'>Descending (Z-A)</option>
+				</select> order with
+				<select name='per_page'>
+					<option value='30' selected='selected'>30</option>
+					<option value='10'>10</option>
+					<option value='25'>25</option>
+					<option value='50'>50</option>
+					<option value='75'>75</option>
+					<option value='100'>100</option>
+				</select> results per page
+				<input value="Sort" class="button primary" accesskey="s" type="submit" />
+			</form>
+		</div>
+        </div>
+        <br /><br />
+
+	</div>
+</div>
+<div style="margin-top: 8px;" class="desc">
+<small>
+Netrunner is a TM of R. Talsorian Games, Inc. Android is TM & ©2012 Fantasy Flight Publishing, Inc. All rights reserved. Netrunner is licensed by Wizards of the Coast LLC. ©2012 Wizards.
+</small></div>
+				
+				<ol class='breadcrumb bottom ipsList_inline left clearfix clear'>
+											<li><a href='forums/'>Card Game DB</a></li>
+							
+						
+							<li><span class='nav_sep'>&rarr;</span> <a href='forums/index.php?app=ccs' title='Return to Pages'>Pages</a></li>
+							
+						
+
+							<li><span class='nav_sep'>&rarr;</span> <a href='index.php/netrunner/android-netrunner-card-spoilers' title='Return to Android: Netrunner Card Spoilers'>Android: Netrunner Card Spoilers</a></li>
+							
+						
+
+							<li><span class='nav_sep'>&rarr;</span> <a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/' title='Return to Genesis'>Genesis</a></li>
+							
+						
+
+							<li><span class='nav_sep'>&rarr;</span> <a href='index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/' title='Return to A Study in Static'>A Study in Static</a></li>
+							
+						
+
+				</ol>
+			</div>
+			<!-- ::: FOOTER (Change skin, language, mark as read, etc) ::: -->
+			<div id='footer_utilities' class='clearfix clear'>
+				<a rel="nofollow" href='#top' id='backtotop' title='Go to top'><img src='forums/public/style_images/gravity_blue/top.png' alt='' /></a>
+				<div class='skin_link'><a href="http://www.ipbforumskins.com">IPB skin</a> by <a href="http://www.ipbforumskins.com">IPBForumSkins</a></div>
+				<!-- Copyright Information -->
+        				  <p id='copyright'>
+        				  	<a href='http://www.invisionpower.com/products/board/' title='Community Forum Software by Invision Power Services'>Community Forum Software by IP.Board</a></p>
+		<!-- / Copyright -->
+				<ul class='ipsList_inline left'>
+					<li>
+						<img src='forums/public/style_images/gravity_blue/feed.png' alt='RSS Feed' id='rss_feed' class='clickable' />
+					</li>
+					
+							<li>
+								<a rel="nofollow" id='new_skin' href='#'>Change Theme</a>			
+								<ul id='new_skin_menucontent' class='ipbmenu_content with_checks' style='display: none'>
+									
+										<li >
+											<a href='#' data-clicklaunch='changeSkin' data-skinid='2'>IP.Board Mobile</a>
+										</li>
+									
+
+										<li class='selected'>
+											<a href='#' data-clicklaunch='changeSkin' data-skinid='12'>Gravity Blue 3.3 (Import)</a>
+										</li>
+									
+								</ul>
+							</li>
+					
+					
+						<li>
+							<a rel="nofollow" id='mark_all_read' href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=all&amp;k=880ea6a14ea49e853634fbdc5015a024" title='Mark all as read'>Mark Community Read</a>
+							<ul id='mark_all_read_menucontent' class='ipbmenu_content' style='display: none'>
+								
+									<li>
+										
+									</li>
+								
+
+									<li>
+										<a href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=forums&amp;k=880ea6a14ea49e853634fbdc5015a024">Forums</a>
+									</li>
+								
+
+									<li>
+										<a href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=members&amp;k=880ea6a14ea49e853634fbdc5015a024">Members</a>
+									</li>
+								
+
+									<li>
+										<a href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=blog&amp;k=880ea6a14ea49e853634fbdc5015a024">Blogs</a>
+									</li>
+								
+
+									<li>
+										<a href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=gallery&amp;k=880ea6a14ea49e853634fbdc5015a024">Gallery</a>
+									</li>
+								
+
+									<li>
+										<a href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=ccs&amp;k=880ea6a14ea49e853634fbdc5015a024">Pages</a>
+									</li>
+								
+								<li>
+									<a href="forums/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=all&amp;k=880ea6a14ea49e853634fbdc5015a024"><strong>Mark all as read</strong></a>
+								</li>
+							</ul>
+						</li>
+					
+					<li>
+						<a href="forums/index.php?app=core&amp;module=help" title='View help' rel="help" accesskey='6'>Help</a>
+					</li>	
+			
+				</ul>
+			</div>
+			
+			<div id='stats_div'></div>
+			
+            
+            </div></div></div>
+            
+		</div>
+<div id='inline_login_form' class='ipbfs_login' style='display: none'>
+		<form action="forums/index.php?app=core&amp;module=global&amp;section=login&amp;do=process" method="post" id='login'>
+			<input type='hidden' name='auth_key' value='880ea6a14ea49e853634fbdc5015a024' />
+			<input type="hidden" name="referer" value="index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/" />
+			<h3>Sign In</h3>
+			<div class='ipsBox_notice'>
+					<ul class='ipsList_inline'>
+						
+							<li><a href="forums/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=facebook" class='ipsButton_secondary'><img src="forums/public/style_images/gravity_blue/loginmethods/facebook.png" alt="Facebook" /> &nbsp; Use Facebook</a></li>
+						
+						
+							<li><a href="forums/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=twitter" class='ipsButton_secondary'><img src="forums/public/style_images/gravity_blue/loginmethods/twitter.png" alt="Twitter" /> &nbsp; Use Twitter</a></li>
+						
+						
+					</ul>
+				</div>
+			
+            <div class='ipbfs_login_row'>
+
+                <div class='ipbfs_login_col'>
+                    <span class='right desc lighter blend_links'><a href="forums/index.php?app=core&amp;module=global&amp;section=register" title='Register now!'>Register now!</a></span>
+            		<strong><label for='ips_username'>Username</label></strong>
+                    <div class='ipsField_content'>
+                    	<input id='ips_username' type='text' class='input_text ipbfs_login_input ipbfs_luser' name='ips_username' placeholder="Username" size='30' tabindex='1' />
+                    </div>
+                </div>
+                
+                <div class='ipbfs_login_col'>
+                    <span class='right desc lighter blend_links'><a href='forums/index.php?app=core&amp;module=global&amp;section=lostpass' title='Retrieve password'>I've forgotten my password</a></span>
+                    <strong><label for='ips_password'>Password</label></strong>
+                    <div class='ipsField_content'>
+                        <input id='ips_password' type='password' class='input_text ipbfs_login_input ipbfs_lpassword' name='ips_password' placeholder="Password" size='30' tabindex='2' /><br />
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div class='clearfix'>
+        
+                <div class='ipbfs_login_col'>
+                    <input type='checkbox' id='inline_remember' checked='checked' name='rememberMe' value='1' class='input_check left' />
+                    <div style='padding-left: 20px;'>
+                        <label for='inline_remember'>
+                            <strong>Remember me</strong>
+                            <span class='desc lighter' style='display: block; padding-top: 5px;'>This is not recommended for shared computers</span>
+                        </label>
+                    </div>
+                </div>
+    
+                
+                <div class='ipbfs_login_col'>
+                    <input type='checkbox' id='inline_invisible' name='anonymous' value='1' class='input_check left' />
+                    <div style='padding-left: 20px;'>
+                        <label for='inline_invisible'>
+                            <strong>Sign in anonymously</strong>
+                            <span class='desc lighter' style='display: block; padding-top: 5px;'>Don't add me to the active users list</span>
+                        </label>
+                    </div>
+                </div>
+                
+    
+            </div>
+            
+            <div class='ipsForm_submit ipsForm_center clear'>
+                <input type='submit' class='input_submit' value='Sign In' />
+            </div>
+
+		</form>
+	</div>		
+		
+<div id='GOTlinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="GoTLinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="/index.php/GoTDeckbuilder.html">Game of Thrones Deckbuilder</a></li>
+<li><a href="/index.php/GoTCards.html/">Game of Thrones Spoilers</a></li>
+<li><a href="/index.php/GoT/game-of-thrones-portal">Game of Thrones Portal</a></li>
+<li><a href="/index.php/GoT/gotcardsearch.html?">Advanced Card Search</a></li>
+<li><a href="/index.php/GoTDecks.html">Submitted Decks</a></li>
+<li><a href="/index.php/GoT/GoTRulings.html">Rulings and Errata</a></li>
+<li><a href="/index.php/index.html/_/game-of-thrones/?view=archive">Articles</a></li>
+<li><a href="/index.php/podcasts/_/game-of-thrones-podcasts/">2 Champs and a Chump Podcast</a></li>
+<li><a href="/index.php/thrones-times.html/_/thrones-times-v1/">Thrones Times</a></li>
+			</ul>
+		</div>
+		<div id='COClinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="CoCLinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="index.php/CoC/cocdeckbuilder.html">Call of Cthulhu Deckbuilder</a></li>
+<li><a href="index.php/CoC/CoCCards.html">Call of Cthulhu Card Spoilers</a></li>
+<li><a href="/index.php/CoC/call-of-cthulhu-portal">Call of Cthulhu Portal</a></li>
+<li><a href="/index.php/CoC/coccardsearch.html?">Advanced Card Search</a></li>
+<li><a href="/index.php/CoC/cocdecks.html">Submitted Decks</a></li>
+<!--<li><a href="/index.php/GoT/GoTRulings.htm"l>Rulings and Errata</a></li>-->
+<!--<li><a href="/index.php/index.html/_/game-of-thrones/?view=archive">Articles</a></li>-->
+<li><a href="/index.php/podcasts/_/call-of-cthulhu-podcasts/">Domain Drain Podcast</a></li>
+<!--<li><a href="/index.php/thrones-times.html/_/thrones-times-v1/">Thrones Times</a></li>-->
+			</ul>
+		</div>
+		<div id='LOTRlinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="LOTRLinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="index.php/lotr/lord-of-the-rings-deckbuilder">Lord of the Rings Deckbuilder</a></li>
+<li><a href="index.php/lotr/lord-of-the-rings-card-spoiler">Lord of the Rings Card Spoilers</a></li>
+<li><a href="/index.php/lotr/lord-of-the-rings-portal">Lord of the Rings Portal</a></li>
+<li><a href="/index.php/lotr/lord-of-the-rings-advanced-card-search?">Advanced Card Search</a></li>
+<li><a href="/index.php/lotr/lord-of-the-rings-decks">Submitted Decks</a></li>
+<!--<li><a href="/index.php/index.html/_/game-of-thrones/?view=archive">Articles</a></li>-->
+<li><a href="/index.php/podcasts/_/lord-of-the-rings-podcasts/">Cardboard of the Rings Podcast</a></li>
+			</ul>
+		</div>
+		<div id='ANlinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="ANLinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="index.php/netrunner/android-netrunner-deck-builder">Android: Netrunner Deckbuilder</a></li>
+<li><a href="index.php/netrunner/android-netrunner-card-spoilers/">Android: Netrunner Full Card Spoilers</a></li>
+<li><a href="index.php/netrunner/android-netrunner-card-search">Advanced Card Search</a></li>
+<li><a href="index.php/netrunner/android-netrunner-submitted-decks">Submitted Decks</a></li>
+<li><a href="index.php/netrunner/android-netrunner-deck-management">Manage Your Saved Decks</a></li>
+<li><a href="index.php/index.html/_/android-netrunner">Articles</a></li>
+			</ul>
+		</div>
+		<div id='SWlinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="SWLinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="index.php/starwars/star-wars-deck-builder">Star Wars Deck Builder</a></li>
+<li><a href="index.php/starwars/star-wars-card-spoilers">Star Wars Full Spoilers</a></li>
+<li><a href="index.php/starwars/star-wars-card-search">Star Wars Card Search</a></li>
+<li><a href="index.php/starwars/star-wars-submitted-decks">Star Wars Submitted Decks</a></li> 
+			</ul>
+		</div>
+		<div id='WIlinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="WILinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="index.php/warhammer/warhammer-invasion-deck-builder">Warhammer: Invasion Deckbuilder</a></li>
+<li><a href="index.php/warhammer/warhammer-invasion-card-spoilers">Warhammer: Invasion Card Spoilers</a></li>
+<li><a href="/index.php/warhammer/warhammer-invasion-card-search">Advanced Card Search</a></li>
+<li><a href="/index.php/warhammer/warhammer-invasion-decks/_/warhammer-decks/">Submitted Decks</a></li>
+<!--<li><a href="/index.php/index.html/_/game-of-thrones/?view=archive">Articles</a></li>
+<li><a href="/index.php/podcasts/_/lord-of-the-rings-podcasts/">Cardboard of the Rings Podcast</a></li>-->
+			</ul>
+		</div>
+		<div id='MWlinksbox' class="ipsHeaderMenu boxShadow" style="display:none; width:200px;z-index:997">
+			<ul id="MWLinks">
+			<script type='text/javascript'>		var weLoaded = false;
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( !window.jQuery )
+			{
+				document.write("<"+"script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></"+"script>");
+				weLoaded	= true;
+			}
+		}
+	})();
+	</script>
+	<script type='text/javascript'>
+
+	(function(){
+		if( typeof(_ccsLoadedAssets) == 'undefined' || !_ccsLoadedAssets )
+		{
+			if( weLoaded ){
+				_ccsjQ = jQuery.noConflict();
+			} else {
+				_ccsjQ = jQuery;
+			}
+
+			document.write("<"+"script type='text/javascript' src='forums/public/ipc_blocks/compiled.js'></"+"script>");
+			document.write("<"+"link rel='stylesheet' media='screen' type='text/css' href='forums/public/ipc_blocks/compiled.css' /"+">");
+		}
+	})();
+	var _ccsLoadedAssets = true;</script> <li><a href="index.php/magewars/mage-wars-card-spoilers">Mage Wars Card Spoilers</a></li>
+<li><a href="index.php/magewars/mage-wars-card-search">Mage Wars Card Search</a></li>
+<li>Mage Wars Deckbuilder coming soon!</li>
+			</ul>
+		</div>
+		<div id='cardPopup' class="ipsHeaderMenu boxShadow post_block" style='display:none;right:10px;top:25%;position:fixed;width:420px;height:490px;padding:0px;'>
+		<h3><div id="cardHandle" class="left handle" style="cursor:move;width:350px;">Card View</div><div> <span style="float:right;font-weight:bold;cursor:pointer;padding-left:5px;" id="closeCardPopup">X</span><span style="float:right;font-weight:bold;cursor:pointer;padding-left:5px;" id="minCardPopup">_</span><span style="float:right;font-weight:bold;cursor:pointer;padding-left:5px;" id="maxCardPopup">^</span></div></h3>
+		<table class='ipb_table'>
+				<tr class='header'>
+						<th id='cardtitle' scope='col'>My Content Title</th>
+				</tr>
+				<tr>
+						<td id='cardcontainer_popup' class='row1' style='text-align:center'>
+						Here is the content that will go into the popup window
+						</td>
+				</tr>
+		</table>
+		</div>
+	</body>
+</html>
